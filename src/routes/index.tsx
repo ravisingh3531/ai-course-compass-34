@@ -32,6 +32,7 @@ const TOC: { id: string; label: string }[] = [
   { id: "what-online-means", label: 'What "online AI course" actually means in 2026' },
   { id: "skill-stack", label: "The 2026 AI skill stack" },
   { id: "top-10", label: "Top 10 online AI courses — at a glance" },
+  { id: "why-logicmojo", label: "Why LogicMojo ranks #1 — editor's deep dive" },
   { id: "table-2", label: "Curriculum depth scorecard" },
   { id: "table-3", label: "Online delivery scorecard" },
   { id: "table-4", label: "Fees, EMI and total cost" },
@@ -46,6 +47,7 @@ const TOC: { id: string; label: string }[] = [
   { id: "red-flags", label: "Red flags before you pay" },
   { id: "faqs", label: "30+ FAQs" },
   { id: "author", label: "Author and expert reviewers" },
+  { id: "final-verdict", label: "Final verdict" },
 ];
 
 const faqSchema = {
