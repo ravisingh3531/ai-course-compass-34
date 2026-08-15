@@ -1,9 +1,3 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { CourseQuiz } from "./CourseQuiz";
 import { FAQS } from "./faqs";
 import { Callout, DataTable, Section } from "./primitives";
@@ -349,18 +343,38 @@ export function PartThree() {
           {FAQS.length} questions, answered the way I'd answer them for a friend who asked over coffee rather than
           the way a landing page answers them.
         </p>
-        <Accordion type="single" collapsible className="mt-6">
-          {FAQS.map((f, i) => (
-            <AccordionItem key={f.q} value={`faq-${i}`}>
-              <AccordionTrigger className="text-left font-display text-[1.02rem] font-semibold text-ink">
-                {f.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-[0.95rem] leading-relaxed text-foreground/90">
-                {f.a}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <div className="not-prose mt-6 grid gap-4 md:grid-cols-2">
+          {FAQS.map((f, i) => {
+            const tone = i % 3;
+            const cls =
+              tone === 0
+                ? "border-primary/25 bg-[image:var(--gradient-soft)]"
+                : tone === 1
+                  ? "border-accent/40 bg-accent/10"
+                  : "border-border bg-card";
+            return (
+              <details
+                key={f.q}
+                className={`group rounded-2xl border p-5 transition-shadow hover:shadow-lg ${cls}`}
+              >
+                <summary className="flex cursor-pointer list-none items-start gap-3">
+                  <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-primary font-mono text-[0.66rem] font-bold text-primary-foreground">
+                    {i + 1}
+                  </span>
+                  <span className="flex-1 font-display text-[1rem] font-semibold leading-snug text-ink">
+                    {f.q}
+                  </span>
+                  <span className="font-mono text-lg leading-none text-primary transition-transform group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-3 border-t border-border/60 pt-3 text-[0.9rem] leading-relaxed text-foreground/90">
+                  {f.a}
+                </p>
+              </details>
+            );
+          })}
+        </div>
       </Section>
 
       <Section id="author" eyebrow="Section 14" title="About the Author and Expert Reviewers">
