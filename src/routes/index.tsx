@@ -4,9 +4,9 @@ import { BeginnerGuide } from "@/components/article/BeginnerGuide";
 import { PartTwo } from "@/components/article/PartTwo";
 import { PartThree } from "@/components/article/PartThree";
 import { FAQS } from "@/components/article/faqs";
-import { Callout, DataTable, StatCard } from "@/components/article/primitives";
+import { Callout, DataTable, Section, StatCard } from "@/components/article/primitives";
 import { StickyToc } from "@/components/article/StickyToc";
-import { Byline } from "@/components/article/AuthorBio";
+import { AuthorCredentials, Byline } from "@/components/article/AuthorBio";
 
 const TITLE =
   "Top 10 Best Online AI Courses in India 2026 — Honest Rankings";
@@ -165,6 +165,14 @@ function Index() {
             <strong>PW Skills</strong> or <strong>GUVI</strong>. Full comparison, fees and honest limitations below.
           </p>
         </div>
+
+        <Section
+          id="who-wrote-this"
+          eyebrow="Before you read the rankings"
+          title="Who wrote this, how it was tested, and why you can check every claim"
+        >
+          <AuthorCredentials />
+        </Section>
 
         <section id="intro" className="reveal scroll-mt-36">
           <p>
