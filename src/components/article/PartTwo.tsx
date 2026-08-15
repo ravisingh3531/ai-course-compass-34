@@ -34,24 +34,27 @@ function RatingBlock({ id }: { id: string }) {
         Six-pillar rating
       </p>
       <div className="grid gap-3 sm:grid-cols-2">
-        {PILLARS.map((p, i) => (
+        {PILLARS.map((p, i) => {
+          const v = r[i] ?? 0;
+          return (
           <div key={p}>
             <div className="mb-1 flex items-baseline justify-between gap-3 text-[0.82rem]">
               <span className="text-muted-foreground">{p}</span>
-              <span className="font-mono font-semibold text-ink">{r[i].toFixed(1)}</span>
+              <span className="font-mono font-semibold text-ink">{v.toFixed(1)}</span>
             </div>
             <div className="h-1.5 w-full overflow-hidden rounded-full bg-border">
               <div
                 className="h-full rounded-full bg-[image:var(--gradient-primary)]"
-                style={{ width: `${(r[i] / 10) * 100}%` }}
+                style={{ width: `${(v / 10) * 100}%` }}
               />
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
       <p className="!mb-0 mt-4 border-t border-border/70 pt-3 text-[0.9rem]">
         <span className="font-mono text-[0.68rem] uppercase tracking-[0.14em] text-muted-foreground">Overall</span>{" "}
-        <span className="font-display text-xl font-bold gradient-text">{r[6].toFixed(1)}</span>{" "}
+        <span className="font-display text-xl font-bold gradient-text">{(r[6] ?? 0).toFixed(1)}</span>{" "}
         <span className="text-muted-foreground">/ 10</span>
       </p>
     </div>
