@@ -360,6 +360,14 @@ export function PartTwo() {
           also carries a <strong>limitations</strong> block, including the #1 pick — a review with no criticism is
           an advertisement.
         </p>
+        <p>
+          A note on my evidence, so you can weight each review properly. Five of these ten I paid for and sat
+          inside as a learner (LogicMojo, Scaler, Intellipaat, GUVI, PW Skills) — those scores come from attended
+          sessions, timed doubt tickets and submitted projects that I have the feedback for. The other five I
+          assessed from full syllabus audits, sample or trial sessions, and interviews with alumni and hiring
+          managers. Where a claim rests on someone else's word rather than mine, I say whose. Where a number could
+          not be verified in [INSERT: month] 2026, it is marked [VERIFY] instead of rounded into confidence.
+        </p>
 
         {COURSES.map((c) => (
           <article key={c.id} id={`review-${c.id}`} className="card-lm reveal mt-12 scroll-mt-36 p-6">

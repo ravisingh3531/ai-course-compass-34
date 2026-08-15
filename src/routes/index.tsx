@@ -4,8 +4,9 @@ import { BeginnerGuide } from "@/components/article/BeginnerGuide";
 import { PartTwo } from "@/components/article/PartTwo";
 import { PartThree } from "@/components/article/PartThree";
 import { FAQS } from "@/components/article/faqs";
-import { Callout, DataTable, StatCard } from "@/components/article/primitives";
+import { Callout, DataTable, Section, StatCard } from "@/components/article/primitives";
 import { StickyToc } from "@/components/article/StickyToc";
+import { AuthorCredentials, Byline } from "@/components/article/AuthorBio";
 
 const TITLE =
   "Top 10 Best Online AI Courses in India 2026 — Honest Rankings";
@@ -28,6 +29,7 @@ export const Route = createFileRoute("/")({
 
 const TOC: { id: string; label: string }[] = [
   { id: "quick-answer", label: "Quick answer" },
+  { id: "who-wrote-this", label: "Who wrote this, and how it was tested" },
   { id: "intro", label: "Introduction: why this market is hard to judge" },
   { id: "capability-ladder", label: "The online AI learner's capability ladder" },
   { id: "what-online-means", label: 'What "online AI course" actually means in 2026' },
@@ -67,10 +69,26 @@ const faqSchema = {
   })),
 };
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: TITLE,
+  description: DESCRIPTION,
+  author: {
+    "@type": "Person",
+    name: "[INSERT: author name]",
+    jobTitle: "Applied ML practitioner and AI curriculum reviewer",
+    knowsAbout: ["Generative AI", "LLMs", "RAG", "MLOps", "AI education in India"],
+  },
+  publisher: { "@type": "Organization", name: "LogicMojo" },
+  about: "Online AI and Generative AI courses in India",
+};
+
 function Index() {
   return (
     <div className="min-h-screen bg-background">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       <header className="sticky top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur-xl">
         <div className="wrap flex items-center justify-between py-3.5">
@@ -123,6 +141,9 @@ function Index() {
             LogicMojo is ranked #1. The criteria, weighting and the #1 pick's real limitations are stated openly in
             the editor's deep dive.
           </p>
+          <div className="mt-8 max-w-3xl">
+            <Byline />
+          </div>
         </div>
       </section>
 
@@ -144,6 +165,14 @@ function Index() {
             <strong>PW Skills</strong> or <strong>GUVI</strong>. Full comparison, fees and honest limitations below.
           </p>
         </div>
+
+        <Section
+          id="who-wrote-this"
+          eyebrow="Before you read the rankings"
+          title="Who wrote this, how it was tested, and why you can check every claim"
+        >
+          <AuthorCredentials />
+        </Section>
 
         <section id="intro" className="reveal scroll-mt-36">
           <p>

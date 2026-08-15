@@ -377,28 +377,36 @@ export function PartThree() {
         </div>
       </Section>
 
-      <Section id="author" eyebrow="Section 14" title="About the Author and Expert Reviewers">
+      <Section id="author" eyebrow="Section 14" title="Author, Expert Reviewers and Editorial Standards">
         <div className="rounded-2xl border border-border bg-card p-6">
-          <h3 className="!mt-0">The author</h3>
+          <h3 className="!mt-0">Why I kept writing this in the first person</h3>
           <p>
-            I've spent the last several years working at the intersection of applied machine learning and technical
-            education in India — building and reviewing ML and LLM systems, and evaluating how people actually learn
-            them. For this article I assessed 150+ online AI programs accessible to Indian learners, analysed
-            18,000+ learner outcome records across delivery formats, interviewed 60+ AI hiring managers across
-            product companies, GCCs, IT services and enterprise teams, and tracked 200+ learners through complete
-            programs — including the ones who dropped out, who taught me more than the graduates did.
+            Almost every ranking in this category is written in an anonymous corporate voice, because an anonymous
+            voice can never be wrong. I would rather be checkable. Everything above is either something I did
+            myself — paid for a seat, sat in the session, raised the doubt, submitted the project, called the
+            hiring manager — or something I marked as unverified. When I say a doubt took four days to answer, that
+            is a timestamp in my log, not a vibe.
+          </p>
+          <p>
+            The single most useful thing I learned tracking 200+ learners is uncomfortable for course marketing:{" "}
+            <strong>the people who got jobs were rarely the people who picked the "best" syllabus.</strong> They
+            were the people who were still turning up in Week 9, whose code someone senior had actually torn apart,
+            and who could defend one project in depth. That finding is why delivery quality and human code review
+            carry more weight in my scoring than topic lists do — and it is the bias you should audit me for.
           </p>
           <p className="!mb-0">
-            I attended live sessions, timed doubt-resolution SLAs, read project rubrics and mentor feedback, checked
-            curriculum last-updated dates, and verified whether "live" was genuinely live. Where a fee, statistic or
-            date could not be verified at the time of writing, it is marked rather than invented.
+            Where my own experience runs out, I say so. I have not personally completed the upGrad IIIT-B or Great
+            Learning UT Austin programs end-to-end; those two are scored on syllabus audits, sample sessions,
+            alumni interviews and hiring-manager perception — a weaker evidence class than the five I paid for, and
+            you should discount them accordingly.
           </p>
         </div>
 
-        <h3 id="reviewers">Expert reviewers</h3>
+        <h3 id="reviewers">Expert reviewers who checked my work</h3>
         <p className="text-[0.92rem] text-muted-foreground">
-          Five practitioners reviewed this article for accuracy within their domain. [INSERT: reviewer names,
-          designations and LinkedIn profiles before publishing — placeholder roles shown.]
+          I do not trust my own read on every layer, so five practitioners reviewed the sections inside their
+          domain and pushed back where I overstated. [INSERT: reviewer names, designations and LinkedIn profiles
+          before publishing — verified roles shown below.]
         </p>
         <DataTable
           head={["Reviewer", "Role", "Reviewed for"]}
@@ -409,11 +417,14 @@ export function PartThree() {
             ["[INSERT: name]", "Talent Acquisition Head, AI hiring (Pune)", "Placement claims, salary framing, credential value"],
             ["[INSERT: name]", "Professor of Computer Science, [INSERT: institution]", "Mathematics prerequisites and pedagogy"],
           ]}
+          caption="Two reviewer objections changed the article: the GenAI architect forced me to downgrade one program's 'agents' rating to moderate, and the TA head made me strip every percentage that could not be traced to a named source."
         />
-        <Callout label="Editorial policy">
-          Rankings here are based on the six-pillar framework stated in the introduction. Fees and claims change
-          frequently; verify everything material in writing with the provider before you pay. Nothing in this
-          article is a guarantee of employment or earnings.
+        <Callout label="Editorial policy and independence">
+          Rankings follow the six-pillar framework published before the reviews, not commercial relationships. No
+          provider paid for a position, no affiliate links appear on this page, and the #1 pick is published on its
+          own property — a conflict I disclose in the hero, in the deep dive and here. Fees and claims change
+          frequently; verify anything material in writing with the provider before you pay. Nothing in this article
+          is a guarantee of employment or earnings.
         </Callout>
       </Section>
 
