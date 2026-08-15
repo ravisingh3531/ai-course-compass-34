@@ -3,7 +3,7 @@ import { PartOne } from "@/components/article/PartOne";
 import { PartTwo } from "@/components/article/PartTwo";
 import { PartThree } from "@/components/article/PartThree";
 import { FAQS } from "@/components/article/faqs";
-import { Callout, DataTable, StatCard, NoteCard } from "@/components/article/primitives";
+import { Callout, DataTable, StatCard } from "@/components/article/primitives";
 
 const TITLE =
   "Top 10 Best Online AI Courses in India 2026 — Honest Rankings";
