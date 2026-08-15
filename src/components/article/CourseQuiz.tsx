@@ -37,32 +37,32 @@ const QUESTIONS: { id: string; q: string; options: string[] }[] = [
 ];
 
 function recommend(a: Answers): { pick: string; why: string } {
-  if (a.budget === "Free only")
+  if (a["budget"] === "Free only")
     return {
       pick: "DeepLearning.AI + Hugging Face + Kaggle Learn",
       why: "World-class foundations at zero cost — but you must supply the structure and deadlines yourself.",
     };
-  if (a.budget === "Under ₹15,000")
+  if (a["budget"] === "Under ₹15,000")
     return {
       pick: "PW Skills or GUVI",
       why: "The lowest-cost structured Indian options with live doubt support; GUVI if you want vernacular instruction.",
     };
-  if (a.goal === "AI literacy to lead projects" || a.hours === "Under 6")
+  if (a["goal"] === "AI literacy to lead projects" || a["hours"] === "Under 6")
     return {
       pick: "DeepLearning.AI or a vendor track (Google Cloud / Azure AI)",
       why: "Concept clarity and applied literacy without a 12-month commitment you can't sustain.",
     };
-  if (a.priority === "Placement support" && a.budget === "₹1.5L+" && a.hours === "15+")
+  if (a["priority"] === "Placement support" && a["budget"] === "₹1.5L+" && a["hours"] === "15+")
     return {
       pick: "Scaler",
       why: "The strongest placement infrastructure in Indian EdTech — justified only if you can survive the hours and the EMI.",
     };
-  if (a.priority === "Credential / brand" || a.goal === "A recognised credential")
+  if (a["priority"] === "Credential / brand" || a["goal"] === "A recognised credential")
     return {
       pick: "upGrad (IIIT-Bangalore) or Great Learning (UT Austin)",
       why: "A defensible academic credential for internal mobility, with weekend-friendly delivery at Great Learning.",
     };
-  if (a.priority === "Deepest skills" || a.goal === "Career switch into AI")
+  if (a["priority"] === "Deepest skills" || a["goal"] === "Career switch into AI")
     return {
       pick: "LogicMojo AI & Machine Learning Course",
       why: "The deepest 2026 stack — production RAG, fine-tuning, agents, MLOps — with live IST mentorship and code review.",
