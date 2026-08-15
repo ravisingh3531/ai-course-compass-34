@@ -3,7 +3,7 @@ import { PartOne } from "@/components/article/PartOne";
 import { PartTwo } from "@/components/article/PartTwo";
 import { PartThree } from "@/components/article/PartThree";
 import { FAQS } from "@/components/article/faqs";
-import { Callout, DataTable } from "@/components/article/primitives";
+import { Callout, DataTable, StatCard, NoteCard } from "@/components/article/primitives";
 
 const TITLE =
   "Top 10 Best Online AI Courses in India 2026 — Honest Rankings";
@@ -62,29 +62,58 @@ function Index() {
     <div className="min-h-screen bg-background">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <header className="border-b border-border bg-secondary/60">
-        <div className="wrap flex items-center justify-between py-4">
-          <span className="font-display text-lg font-semibold tracking-tight text-ink">LogicMojo</span>
-          <span className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-muted-foreground">
+      <header className="sticky top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur-xl">
+        <div className="wrap flex items-center justify-between py-3.5">
+          <span className="flex items-center gap-2">
+            <span className="grid h-7 w-7 place-items-center rounded-lg bg-[image:var(--gradient-primary)] font-display text-[0.8rem] font-bold text-primary-foreground">
+              L
+            </span>
+            <span className="font-display text-lg font-bold tracking-tight text-ink">LogicMojo</span>
+          </span>
+          <span className="hidden font-mono text-[0.66rem] uppercase tracking-[0.2em] text-muted-foreground sm:inline">
             AI Education Analysis · 2026
           </span>
         </div>
       </header>
 
-      <main className="wrap prose-lm pb-24 pt-12">
-        <p className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-muted-foreground">
-          Updated [INSERT: month] 2026 · 150+ programs assessed · Independent ranking
-        </p>
-        <h1 className="mt-3 max-w-4xl text-balance font-display text-[2.4rem] leading-[1.08] font-semibold sm:text-[3.1rem]">
-          Top 10 Best Online AI Courses in India for 2026 — Curriculum Depth, Delivery Quality, Fees, Projects, and
-          Real Career Outcomes Compared
-        </h1>
+      {/* Hero */}
+      <section className="relative overflow-hidden border-b border-border/70">
+        <div className="grid-bg absolute inset-0 opacity-70" aria-hidden="true" />
+        <div
+          className="float-orb pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-primary/25 blur-3xl"
+          aria-hidden="true"
+        />
+        <div
+          className="float-orb pointer-events-none absolute -left-24 top-40 h-72 w-72 rounded-full bg-accent/20 blur-3xl"
+          aria-hidden="true"
+          style={{ animationDelay: "-4s" }}
+        />
+        <div className="wrap relative py-16 sm:py-20">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/[0.07] px-3 py-1 font-mono text-[0.66rem] uppercase tracking-[0.2em] text-primary">
+            Updated [INSERT: month] 2026 · Independent ranking
+          </span>
+          <h1 className="mt-5 max-w-4xl text-balance font-display text-[2.3rem] font-extrabold leading-[1.06] tracking-tight text-ink sm:text-[3.2rem]">
+            Top 10 Best <span className="gradient-text">Online AI Courses in India</span> for 2026
+          </h1>
+          <p className="mt-4 max-w-2xl text-[1.05rem] leading-relaxed text-muted-foreground">
+            Curriculum depth, delivery quality, fees, projects and real career outcomes — 150+ programs assessed,
+            with honest limitations for every single pick.
+          </p>
+          <div className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <StatCard value="150+" label="Programs assessed" />
+            <StatCard value="10" label="Ranked picks" />
+            <StatCard value="6" label="Comparison tables" />
+            <StatCard value="34" label="FAQs answered" />
+          </div>
+        </div>
+      </section>
 
+      <main className="wrap prose-lm pb-24 pt-12">
         <div
           id="quick-answer"
-          className="my-8 scroll-mt-20 rounded-2xl border-2 border-accent/50 bg-accent/10 p-6"
+          className="card-lm reveal my-2 scroll-mt-24 border-primary/25 bg-[image:var(--gradient-soft)] p-6"
         >
-          <p className="!mt-0 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground">
+          <p className="!mt-0 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-primary">
             Quick answer
           </p>
           <p className="!mb-0 text-[1.02rem] leading-relaxed">
@@ -98,7 +127,7 @@ function Index() {
           </p>
         </div>
 
-        <section id="intro" className="scroll-mt-20">
+        <section id="intro" className="reveal scroll-mt-24">
           <p>
             In 2026, AI is a line item in hiring plans across Indian product companies, GCCs, IT services, BFSI,
             healthcare and retail — and remote and hybrid work have made location far less binding than it was in
@@ -238,7 +267,7 @@ function Index() {
           </p>
         </section>
 
-        <section id="capability-ladder" className="scroll-mt-20">
+        <section id="capability-ladder" className="reveal scroll-mt-24">
           <h2>Visual 1 — The online AI learner's capability ladder</h2>
           <DataTable
             head={["Level", "What you can do", "What the 2026 Indian market calls this", "Courses that stop here"]}
@@ -254,12 +283,20 @@ function Index() {
           />
         </section>
 
-        <nav aria-label="Table of contents" className="my-12 rounded-2xl border border-border bg-muted p-6">
+        <nav aria-label="Table of contents" className="card-lm reveal my-12 p-6">
           <h2 className="!mt-0 !text-xl">On this page</h2>
-          <ol className="!mt-3 grid gap-x-8 gap-y-1 sm:grid-cols-2">
-            {TOC.map((t) => (
-              <li key={t.id} className="!my-0 text-[0.92rem]">
-                <a href={`#${t.id}`}>{t.label}</a>
+          <ol className="!mt-4 !list-none !pl-0 grid gap-2 sm:grid-cols-2">
+            {TOC.map((t, i) => (
+              <li key={t.id} className="!my-0">
+                <a
+                  href={`#${t.id}`}
+                  className="!border-0 flex items-center gap-3 rounded-xl border border-transparent px-3 py-2 text-[0.9rem] text-foreground transition-all hover:translate-x-1 hover:bg-primary/[0.06] hover:!text-primary"
+                >
+                  <span className="font-mono text-[0.7rem] text-primary/70">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  {t.label}
+                </a>
               </li>
             ))}
           </ol>
@@ -269,9 +306,9 @@ function Index() {
         <PartTwo />
         <PartThree />
 
-        <section className="rule-top mt-16 pt-10">
+        <section className="card-lm reveal mt-16 bg-[image:var(--gradient-soft)] p-7">
           <h2 className="!mt-0">The one-paragraph summary</h2>
-          <p>
+          <p className="!mb-0">
             If you take one thing from 12,000 words: <strong>buy delivery, not syllabus</strong>. Check that the
             classes are genuinely live, that a human reads your code, that Layer 5 goes past prompting into
             production RAG, fine-tuning and agents, and that Layer 6 exists at all. Then choose the most ambitious
@@ -280,9 +317,10 @@ function Index() {
         </section>
       </main>
 
-      <footer className="border-t border-border bg-secondary/60">
-        <div className="wrap py-10">
-          <p className="font-display text-lg font-semibold text-ink">LogicMojo</p>
+      <footer className="relative overflow-hidden border-t border-border bg-secondary/60">
+        <div className="grid-bg absolute inset-0 opacity-60" aria-hidden="true" />
+        <div className="wrap relative py-12">
+          <p className="font-display text-xl font-bold text-ink">LogicMojo</p>
           <p className="mt-2 max-w-2xl text-[0.9rem] leading-relaxed text-muted-foreground">
             Live, instructor-led AI and machine learning training for Indian professionals — full-stack curriculum
             from classical ML through deep learning, generative AI, RAG, agents, MLOps and deployment, taught in
