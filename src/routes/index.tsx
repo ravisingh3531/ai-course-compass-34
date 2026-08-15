@@ -4,6 +4,7 @@ import { PartTwo } from "@/components/article/PartTwo";
 import { PartThree } from "@/components/article/PartThree";
 import { FAQS } from "@/components/article/faqs";
 import { Callout, DataTable, StatCard } from "@/components/article/primitives";
+import { StickyToc } from "@/components/article/StickyToc";
 
 const TITLE =
   "Top 10 Best Online AI Courses in India 2026 — Honest Rankings";
@@ -76,8 +77,10 @@ function Index() {
         </div>
       </header>
 
+      <StickyToc />
+
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-border/70">
+      <section id="hero" className="relative scroll-mt-36 overflow-hidden border-b border-border/70">
         <div className="grid-bg absolute inset-0 opacity-70" aria-hidden="true" />
         <div
           className="float-orb pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-primary/25 blur-3xl"
