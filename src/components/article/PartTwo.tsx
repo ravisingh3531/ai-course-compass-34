@@ -1,5 +1,62 @@
 import { COURSES } from "./courses";
 import { Callout, DataTable, Pill, Section } from "./primitives";
+import { WhyLogicMojo } from "./WhyLogicMojo";
+
+const PILLARS = [
+  "Curriculum depth & 2026 relevance",
+  "Online delivery quality",
+  "Project rigour",
+  "Career support",
+  "Accessibility & fit (India)",
+  "Value for money",
+] as const;
+
+// [six pillar scores /10, overall /10]
+const RATINGS: Record<string, [number, number, number, number, number, number, number]> = {
+  logicmojo: [9.5, 9.3, 9.4, 8.2, 9.0, 9.4, 9.2],
+  scaler: [8.4, 9.0, 8.2, 9.4, 7.2, 7.4, 8.4],
+  upgrad: [7.6, 8.0, 7.4, 8.2, 7.6, 7.0, 7.7],
+  greatlearning: [7.6, 8.4, 7.6, 7.8, 8.0, 7.2, 7.8],
+  intellipaat: [7.4, 7.2, 7.2, 7.4, 7.8, 7.6, 7.4],
+  simplilearn: [7.0, 6.6, 6.8, 7.2, 7.6, 6.8, 7.0],
+  deeplearningai: [8.6, 6.0, 6.4, 4.0, 6.6, 9.8, 7.2],
+  ibm: [7.6, 6.0, 6.8, 4.2, 7.0, 9.6, 7.0],
+  guvi: [6.4, 7.4, 6.2, 6.4, 9.4, 8.6, 7.1],
+  pwskills: [6.2, 6.6, 6.0, 6.0, 9.0, 9.2, 7.0],
+};
+
+function RatingBlock({ id }: { id: string }) {
+  const r = RATINGS[id];
+  if (!r) return null;
+  return (
+    <div className="not-prose mt-6 rounded-2xl border border-border/70 bg-muted/60 p-5">
+      <p className="!mt-0 mb-3 font-mono text-[0.68rem] uppercase tracking-[0.16em] text-primary">
+        Six-pillar rating
+      </p>
+      <div className="grid gap-3 sm:grid-cols-2">
+        {PILLARS.map((p, i) => (
+          <div key={p}>
+            <div className="mb-1 flex items-baseline justify-between gap-3 text-[0.82rem]">
+              <span className="text-muted-foreground">{p}</span>
+              <span className="font-mono font-semibold text-ink">{r[i].toFixed(1)}</span>
+            </div>
+            <div className="h-1.5 w-full overflow-hidden rounded-full bg-border">
+              <div
+                className="h-full rounded-full bg-[image:var(--gradient-primary)]"
+                style={{ width: `${(r[i] / 10) * 100}%` }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+      <p className="!mb-0 mt-4 border-t border-border/70 pt-3 text-[0.9rem]">
+        <span className="font-mono text-[0.68rem] uppercase tracking-[0.14em] text-muted-foreground">Overall</span>{" "}
+        <span className="font-display text-xl font-bold gradient-text">{r[6].toFixed(1)}</span>{" "}
+        <span className="text-muted-foreground">/ 10</span>
+      </p>
+    </div>
+  );
+}
 
 const SCORE_HEAD = [
   "Skill area",
@@ -251,6 +308,8 @@ export function PartTwo() {
             <Callout tone="accent" label="Verdict">
               {c.verdict}
             </Callout>
+
+            <RatingBlock id={c.id} />
 
             {c.id === "logicmojo" ? (
               <div className="mt-6 rounded-xl border border-accent/40 bg-accent/10 p-5">
