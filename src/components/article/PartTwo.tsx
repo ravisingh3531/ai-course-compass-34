@@ -261,7 +261,9 @@ export function PartTwo() {
         />
       </Section>
 
-      <Section id="reviews" eyebrow="Sections 6–7" title="In-Depth Reviews — All 10 Courses, Identical Structure">
+      <WhyLogicMojo />
+
+      <Section id="reviews" eyebrow="Section 7" title="In-Depth Reviews — All 10 Courses, Identical Structure">
         <p>
           Every course below is reviewed on the same eight headings so you can compare like with like. Every one
           also carries a <strong>limitations</strong> block, including the #1 pick — a review with no criticism is
