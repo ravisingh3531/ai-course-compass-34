@@ -16,13 +16,13 @@ const RATINGS: Record<string, [number, number, number, number, number, number, n
   logicmojo: [9.5, 9.3, 9.4, 8.2, 9.0, 9.4, 9.2],
   scaler: [8.4, 9.0, 8.2, 9.4, 7.2, 7.4, 8.4],
   upgrad: [7.6, 8.0, 7.4, 8.2, 7.6, 7.0, 7.7],
-  greatlearning: [7.6, 8.4, 7.6, 7.8, 8.0, 7.2, 7.8],
+  "great-learning": [7.6, 8.4, 7.6, 7.8, 8.0, 7.2, 7.8],
   intellipaat: [7.4, 7.2, 7.2, 7.4, 7.8, 7.6, 7.4],
   simplilearn: [7.0, 6.6, 6.8, 7.2, 7.6, 6.8, 7.0],
-  deeplearningai: [8.6, 6.0, 6.4, 4.0, 6.6, 9.8, 7.2],
+  "deeplearning-ai": [8.6, 6.0, 6.4, 4.0, 6.6, 9.8, 7.2],
   ibm: [7.6, 6.0, 6.8, 4.2, 7.0, 9.6, 7.0],
   guvi: [6.4, 7.4, 6.2, 6.4, 9.4, 8.6, 7.1],
-  pwskills: [6.2, 6.6, 6.0, 6.0, 9.0, 9.2, 7.0],
+  "pw-skills": [6.2, 6.6, 6.0, 6.0, 9.0, 9.2, 7.0],
 };
 
 function RatingBlock({ id }: { id: string }) {
