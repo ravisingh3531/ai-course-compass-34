@@ -141,6 +141,9 @@ function Index() {
             LogicMojo is ranked #1. The criteria, weighting and the #1 pick's real limitations are stated openly in
             the editor's deep dive.
           </p>
+          <div className="mt-8 max-w-3xl">
+            <Byline />
+          </div>
         </div>
       </section>
 
