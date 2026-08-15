@@ -105,11 +105,17 @@ function Index() {
             with honest limitations for every single pick.
           </p>
           <div className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <StatCard value="12k+" label="Words, fully sourced" />
             <StatCard value="150+" label="Programs assessed" />
             <StatCard value="10" label="Ranked picks" />
-            <StatCard value="6" label="Comparison tables" />
             <StatCard value="34" label="FAQs answered" />
           </div>
+          <p className="mt-6 max-w-2xl text-[0.82rem] leading-relaxed text-muted-foreground">
+            <strong className="text-ink">Last updated:</strong> [INSERT: date] 2026 · ~45 min read ·{" "}
+            <strong className="text-ink">Disclosure:</strong> this article is published on a LogicMojo property and
+            LogicMojo is ranked #1. The criteria, weighting and the #1 pick's real limitations are stated openly in
+            the editor's deep dive.
+          </p>
         </div>
       </section>
 
