@@ -6,6 +6,7 @@ import { PartThree } from "@/components/article/PartThree";
 import { FAQS } from "@/components/article/faqs";
 import { Callout, DataTable, StatCard } from "@/components/article/primitives";
 import { StickyToc } from "@/components/article/StickyToc";
+import { Byline } from "@/components/article/AuthorBio";
 
 const TITLE =
   "Top 10 Best Online AI Courses in India 2026 — Honest Rankings";
@@ -28,6 +29,7 @@ export const Route = createFileRoute("/")({
 
 const TOC: { id: string; label: string }[] = [
   { id: "quick-answer", label: "Quick answer" },
+  { id: "who-wrote-this", label: "Who wrote this, and how it was tested" },
   { id: "intro", label: "Introduction: why this market is hard to judge" },
   { id: "capability-ladder", label: "The online AI learner's capability ladder" },
   { id: "what-online-means", label: 'What "online AI course" actually means in 2026' },
