@@ -1,3 +1,4 @@
+import { BEGINNER } from "./beginner";
 import { COURSES } from "./courses";
 import { Callout, DataTable, Pill, Section } from "./primitives";
 import { WhyLogicMojo } from "./WhyLogicMojo";
@@ -57,6 +58,96 @@ function RatingBlock({ id }: { id: string }) {
         <span className="font-display text-xl font-bold gradient-text">{(r[6] ?? 0).toFixed(1)}</span>{" "}
         <span className="text-muted-foreground">/ 10</span>
       </p>
+    </div>
+  );
+}
+
+function BeginnerDossier({ id }: { id: string }) {
+  const d = BEGINNER[id];
+  if (!d) return null;
+  return (
+    <div className="not-prose mt-6 rounded-2xl border border-primary/25 bg-[image:var(--gradient-soft)] p-5">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-primary">
+          Beginner &amp; placement dossier
+        </p>
+        <span className="rounded-full border border-primary/30 bg-background px-3 py-1 font-mono text-[0.7rem] font-semibold text-ink">
+          {d.beginnerScore}
+        </span>
+      </div>
+
+      <div className="mt-4 grid gap-4 md:grid-cols-2">
+        {[
+          ["Prerequisites for a beginner", d.prereq],
+          ["Ramp-up support (Python, stats, ML)", d.ramp],
+          ["Step-by-step teaching methodology", d.methodology],
+          ["GenAI curriculum depth", d.genai],
+          ["Learning support structure", d.support],
+          ["Mentorship access", d.mentorship],
+          ["Industry readiness (tools & datasets)", d.industry],
+          ["Verdict for a beginner", d.beginnerVerdict],
+        ].map(([h, b]) => (
+          <div key={h as string} className="rounded-xl border border-border/70 bg-background/70 p-4">
+            <p className="font-display text-[0.92rem] font-bold text-ink">{h}</p>
+            <p className="mt-1.5 text-[0.86rem] leading-relaxed text-foreground/85">{b}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-4 grid gap-4 md:grid-cols-2">
+        <div className="rounded-xl border border-border/70 bg-background/70 p-4">
+          <p className="font-display text-[0.92rem] font-bold text-ink">Projects (capstone + industry-level GenAI)</p>
+          <ul className="mt-2 space-y-1.5 text-[0.85rem] text-foreground/85">
+            {d.projects.map((pr) => (
+              <li key={pr} className="flex gap-2">
+                <span className="text-primary">▸</span>
+                <span>{pr}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="rounded-xl border border-accent/40 bg-accent/10 p-4">
+          <p className="font-display text-[0.92rem] font-bold text-ink">Placement &amp; job assistance</p>
+          <dl className="mt-2 space-y-2 text-[0.85rem]">
+            {d.placement.map((x) => (
+              <div key={x.label}>
+                <dt className="font-mono text-[0.64rem] uppercase tracking-[0.12em] text-muted-foreground">
+                  {x.label}
+                </dt>
+                <dd className="text-foreground/90">{x.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+
+      <div className="mt-4 rounded-xl border border-border/70 bg-background/70 p-4">
+        <p className="font-display text-[0.92rem] font-bold text-ink">Verified beginner feedback</p>
+        <div className="mt-2 grid gap-3 sm:grid-cols-2">
+          {d.feedback.map((f) => (
+            <div key={f.who} className="rounded-lg border border-border/60 bg-muted/50 p-3 text-[0.84rem]">
+              <p className="font-semibold text-ink">{f.who}</p>
+              <p className="text-muted-foreground">
+                {f.from} → <span className="font-medium text-ink">{f.to}</span>
+              </p>
+              <p className="mt-1 text-foreground/85">{f.note}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-3 text-[0.76rem] text-muted-foreground">
+          Outcome patterns tracked during research; ask any institute to evidence equivalents before you enrol. For
+          LogicMojo, published alumni outcomes are at{" "}
+          <a
+            href="https://logicmojo.com/success-story"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2"
+          >
+            logicmojo.com/success-story
+          </a>
+          .
+        </p>
+      </div>
     </div>
   );
 }
@@ -315,6 +406,8 @@ export function PartTwo() {
             </Callout>
 
             <RatingBlock id={c.id} />
+
+            <BeginnerDossier id={c.id} />
 
             {c.id === "logicmojo" ? (
               <div className="mt-6 rounded-xl border border-accent/40 bg-accent/10 p-5">
