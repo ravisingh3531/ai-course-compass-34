@@ -7,7 +7,7 @@ export function useTocItems(): Item[] {
   return useMemo(() => {
     const reviews: Item[] = COURSES.map((c) => ({
       id: `review-${c.id}`,
-      label: `${c.rank}. ${c.name.split("—")[0].trim()}`,
+      label: `${c.rank}. ${(c.name.split("—")[0] ?? c.name).trim()}`,
       sub: true,
     }));
     return [
@@ -37,7 +37,7 @@ function useActiveId(ids: string[]) {
       .filter((e): e is HTMLElement => Boolean(e));
     if (!els.length) return;
     const onScroll = () => {
-      let current = els[0].id;
+      let current = els[0]?.id ?? "";
       for (const el of els) {
         if (el.getBoundingClientRect().top <= 140) current = el.id;
       }
