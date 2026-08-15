@@ -114,7 +114,7 @@ function Index() {
       <main className="wrap prose-lm pb-24 pt-12">
         <div
           id="quick-answer"
-          className="card-lm reveal my-2 scroll-mt-24 border-primary/25 bg-[image:var(--gradient-soft)] p-6"
+          className="card-lm reveal my-2 scroll-mt-36 border-primary/25 bg-[image:var(--gradient-soft)] p-6"
         >
           <p className="!mt-0 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-primary">
             Quick answer
@@ -130,7 +130,7 @@ function Index() {
           </p>
         </div>
 
-        <section id="intro" className="reveal scroll-mt-24">
+        <section id="intro" className="reveal scroll-mt-36">
           <p>
             In 2026, AI is a line item in hiring plans across Indian product companies, GCCs, IT services, BFSI,
             healthcare and retail — and remote and hybrid work have made location far less binding than it was in
@@ -270,7 +270,7 @@ function Index() {
           </p>
         </section>
 
-        <section id="capability-ladder" className="reveal scroll-mt-24">
+        <section id="capability-ladder" className="reveal scroll-mt-36">
           <h2>Visual 1 — The online AI learner's capability ladder</h2>
           <DataTable
             head={["Level", "What you can do", "What the 2026 Indian market calls this", "Courses that stop here"]}

@@ -171,7 +171,9 @@ export function PartThree() {
           <li>Can I speak to two alumni from the last six months whom you didn't hand-pick?</li>
         </ol>
 
-        <CourseQuiz />
+        <div id="quiz" className="scroll-mt-36">
+          <CourseQuiz />
+        </div>
       </Section>
 
       <Section id="free-vs-paid" eyebrow="Section 9b" title="Free vs. Paid — When ₹0 Is Genuinely Better, and When It Isn't">

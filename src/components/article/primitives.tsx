@@ -12,7 +12,7 @@ export function Section({
   children: ReactNode;
 }) {
   return (
-    <section id={id} className="reveal mt-16 scroll-mt-24 first:mt-0">
+    <section id={id} className="reveal mt-16 scroll-mt-36 first:mt-0">
       <div className="mb-5 flex items-center gap-3">
         <span className="h-8 w-1.5 rounded-full bg-[image:var(--gradient-primary)]" />
         <div>
