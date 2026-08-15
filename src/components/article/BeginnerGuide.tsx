@@ -135,13 +135,7 @@ export function BeginnerGuide() {
             [
               "Proof, not marketing",
               "Public alumni outcome stories",
-              <>
-                Open{" "}
-                <a key="s" href={SUCCESS} target="_blank" rel="noopener noreferrer">
-                  logicmojo.com/success-story
-                </a>{" "}
-                and cross-check two profiles on LinkedIn
-              </>,
+              "Open logicmojo.com/success-story and cross-check two profiles on LinkedIn",
             ],
           ]}
         />
