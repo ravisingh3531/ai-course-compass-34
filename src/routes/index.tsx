@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PartOne } from "@/components/article/PartOne";
+import { BeginnerGuide } from "@/components/article/BeginnerGuide";
 import { PartTwo } from "@/components/article/PartTwo";
 import { PartThree } from "@/components/article/PartThree";
 import { FAQS } from "@/components/article/faqs";
@@ -31,6 +32,12 @@ const TOC: { id: string; label: string }[] = [
   { id: "capability-ladder", label: "The online AI learner's capability ladder" },
   { id: "what-online-means", label: 'What "online AI course" actually means in 2026' },
   { id: "skill-stack", label: "The 2026 AI skill stack" },
+  { id: "beginner-problem", label: "Why most GenAI courses fail beginners" },
+  { id: "cost-of-wrong", label: "The cost of getting it wrong" },
+  { id: "my-solution", label: "My experience-based solution — beginner picks" },
+  { id: "methodology", label: "How I researched and ranked these 10" },
+  { id: "beginner-choose", label: "How to choose as a beginner" },
+  { id: "beyond-marketing", label: 'Beyond the marketing — placement claims decoded' },
   { id: "top-10", label: "Top 10 online AI courses — at a glance" },
   { id: "why-logicmojo", label: "Why LogicMojo ranks #1 — editor's deep dive" },
   { id: "table-2", label: "Curriculum depth scorecard" },
@@ -314,6 +321,7 @@ function Index() {
         </nav>
 
         <PartOne />
+        <BeginnerGuide />
         <PartTwo />
         <PartThree />
 
