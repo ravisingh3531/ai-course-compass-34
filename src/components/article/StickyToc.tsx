@@ -16,6 +16,7 @@ export function useTocItems(): Item[] {
     return [
       { id: "hero", label: "Top" },
       { id: "quick-answer", label: "Quick answer" },
+      { id: "who-wrote-this", label: "Who wrote this" },
       { id: "capability-ladder", label: "Capability ladder" },
       { id: "skill-stack", label: "7-layer AI skill stack" },
       { id: "beginner-problem", label: "Why courses fail beginners" },
@@ -33,6 +34,7 @@ export function useTocItems(): Item[] {
       { id: "roadmap", label: "12-month roadmap" },
       { id: "red-flags", label: "Red flags" },
       { id: "faqs", label: "FAQs" },
+      { id: "author", label: "Author & reviewers" },
       { id: "final-verdict", label: "Final verdict" },
     ];
   }, []);
