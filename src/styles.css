@@ -149,5 +149,87 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
   }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--ink);
+    letter-spacing: -0.015em;
+  }
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+}
+
+@utility wrap {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 62rem;
+  padding-inline: 1.25rem;
+}
+
+/* Article typography */
+@utility prose-lm {
+  & p {
+    margin-block: 0.9rem;
+    line-height: 1.75;
+    color: var(--foreground);
+  }
+  & h2 {
+    margin-top: 3.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.9rem;
+    line-height: 1.15;
+    font-weight: 600;
+    scroll-margin-top: 5rem;
+  }
+  & h3 {
+    margin-top: 2.25rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.28rem;
+    font-weight: 600;
+    scroll-margin-top: 5rem;
+  }
+  & h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.4rem;
+    font-size: 1.02rem;
+    font-weight: 600;
+  }
+  & ul,
+  & ol {
+    margin-block: 0.9rem;
+    padding-left: 1.15rem;
+    line-height: 1.7;
+  }
+  & ul {
+    list-style: disc;
+  }
+  & ol {
+    list-style: decimal;
+  }
+  & li {
+    margin-block: 0.35rem;
+  }
+  & strong {
+    font-weight: 650;
+    color: var(--ink);
+  }
+  & a {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+@utility rule-top {
+  border-top: 1px solid var(--border);
 }
