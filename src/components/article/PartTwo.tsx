@@ -209,7 +209,7 @@ export function PartTwo() {
         </p>
 
         {COURSES.map((c) => (
-          <article key={c.id} id={`review-${c.id}`} className="mt-12 scroll-mt-20 rounded-2xl border border-border bg-card p-6">
+          <article key={c.id} id={`review-${c.id}`} className="card-lm reveal mt-12 scroll-mt-36 p-6">
             <div className="flex flex-wrap items-center gap-3">
               <span className="flex size-9 items-center justify-center rounded-full bg-primary font-display text-lg font-semibold text-primary-foreground">
                 {c.rank}
