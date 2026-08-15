@@ -7,7 +7,10 @@ export function useTocItems(): Item[] {
   return useMemo(() => {
     const reviews: Item[] = COURSES.map((c) => ({
       id: `review-${c.id}`,
-      label: `${c.rank}. ${(c.name.split("—")[0] ?? c.name).trim()}`,
+      label:
+        c.rank === 1
+          ? "1. LogicMojo — deep dive"
+          : `${c.rank}. ${(c.name.split("—")[0] ?? c.name).trim()}`,
       sub: true,
     }));
     return [
@@ -16,7 +19,6 @@ export function useTocItems(): Item[] {
       { id: "capability-ladder", label: "Capability ladder" },
       { id: "skill-stack", label: "7-layer AI skill stack" },
       { id: "top-10", label: "Top 10 at a glance" },
-      { id: "review-logicmojo", label: "#1 LogicMojo deep dive" },
       { id: "reviews", label: "In-depth reviews", group: true },
       ...reviews,
       { id: "also-considered", label: "Also considered" },
