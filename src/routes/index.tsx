@@ -69,10 +69,26 @@ const faqSchema = {
   })),
 };
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: TITLE,
+  description: DESCRIPTION,
+  author: {
+    "@type": "Person",
+    name: "[INSERT: author name]",
+    jobTitle: "Applied ML practitioner and AI curriculum reviewer",
+    knowsAbout: ["Generative AI", "LLMs", "RAG", "MLOps", "AI education in India"],
+  },
+  publisher: { "@type": "Organization", name: "LogicMojo" },
+  about: "Online AI and Generative AI courses in India",
+};
+
 function Index() {
   return (
     <div className="min-h-screen bg-background">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       <header className="sticky top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur-xl">
         <div className="wrap flex items-center justify-between py-3.5">
